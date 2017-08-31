@@ -8,6 +8,11 @@
         <img src="../assets/yar-cat.jpg" alt="yar cat">
     </div>
     <ul>
-        <li *ngFor="let item of navItems" [ngClass]="{'active': item.key === activeNavItem.key}" (click)="handleNavItemClick(item.key)">{{item.title}}</li>
+        <!-- here we loop over the list of nav items, and for each one
+             we'll set up a click handler that passes event data for the nav item
+             that was clicked -->
+        <li *ngFor="let item of navItems"
+            [ngClass]="{'active': item.key === activeNavItem.key}"
+            (click)="handleNavItemClick(item.key)">{{item.title}}</li>
     </ul>
 </nav>

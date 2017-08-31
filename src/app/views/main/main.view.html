@@ -1,5 +1,10 @@
+
+<!-- now that I have active nav data in my state, I can simply
+	 pass it in to make more of my app content dynamic -->
+
 <app-header>
     <nav-toggle (openNavEvent)="openNav()"></nav-toggle>
+    <!-- notice the page title is now set by the state -->
     <page-title [title]="uiState.activeNavItem.title"></page-title>
     <action-buttons></action-buttons>
 </app-header>
@@ -7,6 +12,7 @@
 <div class="content">
     <div>
         <img src="../assets/goofy-pirate.png" alt="Goofy"/>
+        <!-- and the simple string living in my main view is set dynamically as well -->
         <h2>{{uiState.activeNavItem.content}}</h2>
     </div>
 </div>

@@ -3,12 +3,14 @@
     <div class="app-modal">
         <img src="../assets/pirate-minion.jpg" alt="pirate minion">
         <div class="interaction">
+            <!-- modal data is passed in dynamically from the component input -->
             <h2>Activate {{modalData.title}}</h2>
             <p>
                 {{modalData.prompt}}
             </p>
             <div class="modal-buttons">
 
+                <!-- in this step I also add a click handler to the modal's cancel button -->
                 <button class="icon-button modal-button cancel-button" (click)="handleModalClose()">
                     <span class="fa fa-ban"></span>
                 </button>

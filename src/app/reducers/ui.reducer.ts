@@ -30,6 +30,10 @@ export function ui(state: any = INITIAL_STATE, action: Action) {
                 navIsOpen: false
             });
 
+        // two new actions that open and close the modal.
+        // notice that in opening the modal, I accept a payload,
+        // while in closing the modal I don't.
+
         case Actions.OPEN_MODAL:
             return Object.assign({}, state, {
                 modalIsOpen: true,

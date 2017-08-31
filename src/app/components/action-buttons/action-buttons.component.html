@@ -1,4 +1,7 @@
 <div class="action-buttons">
+    <!-- notice that the click handler emits the property of the specific button,
+         meaning that even though we're running a loop, we still get data from the
+         button that was clicked -->
     <button *ngFor="let item of itemList"
             class="icon-button action-button"
             (click)="handleActionButtonClick(item.key)">

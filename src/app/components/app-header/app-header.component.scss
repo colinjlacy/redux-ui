@@ -1,0 +1,12 @@
+@import '../../app.variables';
+
+header {
+  background-color: $white;
+  height: 5rem;
+  box-shadow: .1rem 0 .2rem $black;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-between;
+}

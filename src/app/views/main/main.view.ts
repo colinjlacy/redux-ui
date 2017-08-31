@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'main-view',
-    template: '<p>thisthat</p>'
+    templateUrl: './main.view.html'
 })
-export class MainView {}
+export class MainView {
+
+}

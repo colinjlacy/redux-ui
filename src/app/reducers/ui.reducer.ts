@@ -14,7 +14,8 @@ export function ui(state: any = INITIAL_STATE, action: Action) {
 
         case Actions.SET_NAV_ITEM:
             return Object.assign({}, state, {
-                activeNavItem: action.payload
+                activeNavItem: action.payload,
+                navIsOpen: false
             });
 
         case Actions.OPEN_NAV:

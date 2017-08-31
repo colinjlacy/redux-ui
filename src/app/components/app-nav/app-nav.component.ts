@@ -11,9 +11,9 @@ export class AppNav {
 
     navItems: Array<iNavItem>;
 
-    @Input() isActive: boolean;
+    @Input() isOpen: boolean;
     @Input() activeNavItem: iNavItem;
-    @Output() setActive = new EventEmitter<boolean>();
+    @Output() closeNavEvent = new EventEmitter<any>();
     @Output() setNavItem = new EventEmitter<iNavItem>();
 
     constructor() {
@@ -22,6 +22,10 @@ export class AppNav {
 
     handleNavItemClick(key) {
         this.setNavItem.emit(key);
+    }
+
+    handleCloseNavClick() {
+        this.closeNavEvent.emit();
     }
 
 }

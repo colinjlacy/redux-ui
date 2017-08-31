@@ -7,6 +7,7 @@
     margin-left: -400px;
     background-color: $dark;
     top: 0;
+    transition: margin 500ms;
     &.active {
         margin-left: 0;
         box-shadow: 0 .3rem .3rem $black;

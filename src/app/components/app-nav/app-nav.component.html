@@ -1,6 +1,6 @@
-<nav class="app-nav active">
+<nav class="app-nav" [ngClass]="{'active': isOpen}">
     <div class="close">
-        <button class="icon-button">
+        <button class="icon-button" (click)="handleCloseNavClick()">
             <span class="fa fa-times"></span>
         </button>
     </div>

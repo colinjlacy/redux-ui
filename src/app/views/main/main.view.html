@@ -1,13 +1,19 @@
 <app-header>
-    <nav-toggle></nav-toggle>
+    <nav-toggle (openNavEvent)="openNav()"></nav-toggle>
     <page-title></page-title>
     <action-buttons></action-buttons>
 </app-header>
+
 <div class="content">
     <div>
         <img src="../assets/goofy-pirate.png" alt="Goofy"/>
         <h2>Yarrr, content goes herrre...</h2>
     </div>
 </div>
-<app-nav [activeNavItem]="uiState.activeNavItem" (setNavItem)="handleNavActivation($event)"></app-nav>
+
+<app-nav [activeNavItem]="uiState.activeNavItem"
+         [isOpen]="uiState.navIsOpen"
+         (setNavItem)="handleNavItemActivation($event)"
+         (closeNavEvent)="closeNav()"></app-nav>
+
 <app-modal></app-modal>

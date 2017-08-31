@@ -17,7 +17,12 @@ export function ui(state: any = INITIAL_STATE, action: Action) {
         case Actions.SET_NAV_ITEM:
             return Object.assign({}, state, {
                 activeNavItem: action.payload,
-                navIsOpen: false
+                navIsOpen: false,
+                // Adding these two properties allows me to use this
+                // same action for handling navigation from the modal.
+                // Did that just blow your mind?
+                modalIsOpen: false,
+                modalData: {}
             });
 
         case Actions.OPEN_NAV:

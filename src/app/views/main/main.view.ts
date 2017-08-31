@@ -47,8 +47,10 @@ export class MainView implements OnInit, OnDestroy {
 
     triggerModal(eventData) {
         const payload: iNavItem = NAV_ITEMS.find(x => x.key === eventData);
-        payload.title = payload.title.replace('!', '?');
-        this.store.dispatch(new OpenModal(payload));
+        const modalData = Object.assign({}, payload, {
+            title: payload.title.replace('!', '?')
+        });
+        this.store.dispatch(new OpenModal(modalData));
     }
 
     closeModal() {

@@ -30,6 +30,9 @@ export class MainView implements OnInit, OnDestroy {
         this.storeSubscription.unsubscribe();
     }
 
+    // notice that when we dispatch this action, we pass in an object to its
+    // constructor as the action payload.  That will map to the action parameter
+    // of the reducer function.
     handleNavItemActivation(eventData) {
         const payload: iNavItem = NAV_ITEMS.find(x => x.key === eventData);
         this.store.dispatch(new SetNavItem(payload));

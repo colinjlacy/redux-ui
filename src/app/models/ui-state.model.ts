@@ -1,3 +1,6 @@
-export interface iUiState {
+import { iNavItem } from './nav-item.model';
 
+export interface iUiState {
+    activeNavItem: iNavItem;
+    navIsOpen: boolean;
 }

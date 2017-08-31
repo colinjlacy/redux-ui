@@ -12,6 +12,9 @@ export function ui(state: any = INITIAL_STATE, action: Action) {
 
     switch (action.type) {
 
+        // in this reducer, we set the activeNavItem state property
+        // to accept the value of the payload.  This allows us to
+        // set data to the state dynamically based on user interactions
         case Actions.SET_NAV_ITEM:
             return Object.assign({}, state, {
                 activeNavItem: action.payload,

@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// adding in the redux store ng2 module
+// In Angular, we import the StoreModule from its directory in node_modules
 import { StoreModule } from '@ngrx/store';
 
 import { AppHeader, AppNav, AppModal, PageTitle, NavToggle, ActionButtons } from './components';
 import { MainView } from './views';
-// pulling in my reducer function
+// We also pull in the reducer function, which currently has not content.
 import { ui } from './reducers';
 import { AppComponent } from './app.component';
 
@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
     ],
     imports: [
         BrowserModule,
-        // importing the store module as a module dependency
+        // finally, we import the store module as a module dependency
         StoreModule.forRoot({ui: ui})
     ],
     providers: [],

@@ -9,5 +9,5 @@
         <h2>Yarrr, content goes herrre...</h2>
     </div>
 </div>
-<app-nav></app-nav>
+<app-nav [activeNavItem]="uiState.activeNavItem" (setNavItem)="handleNavActivation($event)"></app-nav>
 <app-modal></app-modal>

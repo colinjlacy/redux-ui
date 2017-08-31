@@ -1,4 +1,4 @@
-<nav class="app-nav">
+<nav class="app-nav active">
     <div class="close">
         <button class="icon-button">
             <span class="fa fa-times"></span>
@@ -8,9 +8,6 @@
         <img src="../assets/yar-cat.jpg" alt="yar cat">
     </div>
     <ul>
-        <li class="active">Home</li>
-        <li>Pirate Disco!</li>
-        <li>Pirate Happy Hour!</li>
-        <li>Pirate Birthday Parrrty!</li>
+        <li *ngFor="let item of navItems" [ngClass]="{'active': item.key === activeNavItem.key}" (click)="handleNavItemClick(item.key)">{{item.title}}</li>
     </ul>
 </nav>

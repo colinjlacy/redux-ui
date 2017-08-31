@@ -28,6 +28,10 @@ export class MainView implements OnInit, OnDestroy {
         this.storeSubscription.unsubscribe();
     }
 
+    // now that we have interaction being handled in our dumb components,
+    // we'll interact with our Store in our smart component by handling
+    // the events emitted by dumb components in specialized handlers.
+
     openNav() {
         this.store.dispatch(new OpenNav());
     }

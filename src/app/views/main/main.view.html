@@ -1,4 +1,5 @@
 <app-header>
+    <!-- here we're handling the nav-toggle's openNavEvent -->
     <nav-toggle (openNavEvent)="openNav()"></nav-toggle>
     <page-title></page-title>
     <action-buttons></action-buttons>
@@ -11,6 +12,7 @@
     </div>
 </div>
 
+<!-- here we're handling the app-nav's closeNavEvent -->
 <app-nav [isOpen]="uiState.navIsOpen"
          (closeNavEvent)="closeNav()"></app-nav>
 

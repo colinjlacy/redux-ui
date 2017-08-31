@@ -1,13 +1,7 @@
 <div class="action-buttons">
-    <button class="icon-button action-button">
-        <span class="fa fa-music"></span>
-    </button>
-
-    <button class="icon-button action-button">
-        <span class="fa fa-beer"></span>
-    </button>
-
-    <button class="icon-button action-button">
-        <span class="fa fa-birthday-cake"></span>
+    <button *ngFor="let item of itemList"
+            class="icon-button action-button"
+            (click)="handleActionButtonClick(item.key)">
+        <span class="fa fa-{{item.key}}"></span>
     </button>
 </div>

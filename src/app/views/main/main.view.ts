@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 
 import { NAV_ITEMS } from '../../constants';
-import { SetNavItem, OpenNav, CloseNav } from '../../actions';
+import { SetNavItem, OpenNav, CloseNav, OpenModal, CloseModal } from '../../actions';
 import { iUiState, iAppState, iNavItem } from '../../models';
 
 @Component({
@@ -15,6 +15,7 @@ export class MainView implements OnInit, OnDestroy {
 
     storeSubscription: Subscription;
     uiState: iUiState;
+    navItemList: Array<iNavItem>;
 
     constructor(private store: Store<iAppState>) {}
 
@@ -24,6 +25,7 @@ export class MainView implements OnInit, OnDestroy {
                 console.log('val', val);
                 this.uiState = val
             });
+        this.navItemList = NAV_ITEMS;
     }
 
     ngOnDestroy() {
@@ -41,5 +43,15 @@ export class MainView implements OnInit, OnDestroy {
 
     closeNav() {
         this.store.dispatch(new CloseNav());
+    }
+
+    triggerModal(eventData) {
+        const payload: iNavItem = NAV_ITEMS.find(x => x.key === eventData);
+        payload.title = payload.title.replace('!', '?');
+        this.store.dispatch(new OpenModal(payload));
+    }
+
+    closeModal() {
+        this.store.dispatch(new CloseModal());
     }
 }

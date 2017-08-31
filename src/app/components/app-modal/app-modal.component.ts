@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { iNavItem } from '../../models';
 
 @Component({
     selector: 'app-modal',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
     styleUrls: ['./app-modal.component.scss']
 })
 export class AppModal {
+    @Input() isOpen: boolean;
+    @Input() modalData: iNavItem;
+    @Output() modalCloseEvent = new EventEmitter<any>();
 
+    handleModalClose() {
+        this.modalCloseEvent.emit();
+    }
 }

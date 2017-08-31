@@ -1,15 +1,15 @@
-<div class="modal-container">
+<div class="modal-container" [ngClass]="{'active': isOpen}">
     <div class="modal-background"></div>
     <div class="app-modal">
         <img src="../assets/pirate-minion.jpg" alt="pirate minion">
         <div class="interaction">
-            <h2>Lorem Ipsum</h2>
+            <h2>Activate {{modalData.title}}</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consectetur deleniti doloremque earum est eum expedita facere fuga harum, in numquam odit quaerat quisquam quod rem, repellendus repudiandae ullam, voluptas.
+                {{modalData.prompt}}
             </p>
             <div class="modal-buttons">
 
-                <button class="icon-button modal-button cancel-button">
+                <button class="icon-button modal-button cancel-button" (click)="handleModalClose()">
                     <span class="fa fa-ban"></span>
                 </button>
 

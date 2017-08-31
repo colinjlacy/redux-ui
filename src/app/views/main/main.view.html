@@ -1,7 +1,7 @@
 <app-header>
     <nav-toggle (openNavEvent)="openNav()"></nav-toggle>
     <page-title [title]="uiState.activeNavItem.title"></page-title>
-    <action-buttons></action-buttons>
+    <action-buttons [itemList]="navItemList" (actionButtonEvent)="triggerModal($event)"></action-buttons>
 </app-header>
 
 <div class="content">
@@ -16,4 +16,6 @@
          (setNavItem)="handleNavItemActivation($event)"
          (closeNavEvent)="closeNav()"></app-nav>
 
-<app-modal></app-modal>
+<app-modal [isOpen]="uiState.modalIsOpen"
+           [modalData]="uiState.modalData"
+           (modalCloseEvent)="closeModal()"></app-modal>

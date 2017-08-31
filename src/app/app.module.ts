@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
     imports: [
         BrowserModule,
         // importing the store module as a module dependency
-        StoreModule.provideStore({ui: ui})
+        StoreModule.forRoot({ui: ui})
     ],
     providers: [],
     bootstrap: [AppComponent]

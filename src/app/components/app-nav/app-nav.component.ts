@@ -20,7 +20,6 @@ export class AppNav {
         this.navItems = NAV_ITEMS;
     }
 
-    // now we have click handlers for each item in the main nav
     handleNavItemClick(key) {
         this.setNavItem.emit(key);
     }

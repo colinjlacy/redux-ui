@@ -1,13 +1,13 @@
 <app-header>
     <nav-toggle (openNavEvent)="openNav()"></nav-toggle>
-    <page-title></page-title>
+    <page-title [title]="uiState.activeNavItem.title"></page-title>
     <action-buttons></action-buttons>
 </app-header>
 
 <div class="content">
     <div>
         <img src="../assets/goofy-pirate.png" alt="Goofy"/>
-        <h2>Yarrr, content goes herrre...</h2>
+        <h2>{{uiState.activeNavItem.content}}</h2>
     </div>
 </div>
 

@@ -1,0 +1,19 @@
+@import "../../app.variables";
+
+.content {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    img {
+        max-width: 35rem;
+        -webkit-filter: contrast(30%) brightness(1.5);
+        filter: contrast(30%) brightness(1.5);
+    }
+    h2 {
+        font-weight: 200;
+        font-size: 3rem;
+        text-align: center;
+        color: $gray;
+        margin-top: 1rem;
+    }
+}

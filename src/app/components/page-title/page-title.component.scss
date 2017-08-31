@@ -1,5 +1,10 @@
 .page-title {
-  margin: 0 auto;
-  font-size: 3rem;
-  font-weight: 200;
+    margin: 0 auto;
+    font-size: 3rem;
+    font-weight: 200;
+    display: inline-block;
+    padding: .5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }

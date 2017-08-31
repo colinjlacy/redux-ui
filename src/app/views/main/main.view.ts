@@ -2,9 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 
-import { NAV_ITEMS } from '../../constants';
-import { SetNavItem, OpenNav, CloseNav } from '../../actions';
-import { iUiState, iAppState, iNavItem } from '../../models';
+import { OpenNav, CloseNav } from '../../actions';
+import { iUiState, iAppState } from '../../models';
 
 @Component({
     selector: 'main-view',
@@ -21,18 +20,12 @@ export class MainView implements OnInit, OnDestroy {
     ngOnInit() {
         this.storeSubscription = this.store.select('ui')
             .subscribe(val => {
-                console.log('val', val);
                 this.uiState = val
             });
     }
 
     ngOnDestroy() {
         this.storeSubscription.unsubscribe();
-    }
-
-    handleNavItemActivation(eventData) {
-        const payload: iNavItem = NAV_ITEMS.find(x => x.key === eventData);
-        this.store.dispatch(new SetNavItem(payload));
     }
 
     openNav() {

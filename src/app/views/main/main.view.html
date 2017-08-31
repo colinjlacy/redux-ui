@@ -11,9 +11,7 @@
     </div>
 </div>
 
-<app-nav [activeNavItem]="uiState.activeNavItem"
-         [isOpen]="uiState.navIsOpen"
-         (setNavItem)="handleNavItemActivation($event)"
+<app-nav [isOpen]="uiState.navIsOpen"
          (closeNavEvent)="closeNav()"></app-nav>
 
 <app-modal></app-modal>

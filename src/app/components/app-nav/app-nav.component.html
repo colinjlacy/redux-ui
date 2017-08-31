@@ -8,6 +8,9 @@
         <img src="../assets/yar-cat.jpg" alt="yar cat">
     </div>
     <ul>
-        <li *ngFor="let item of navItems" [ngClass]="{'active': item.key === activeNavItem.key}" (click)="handleNavItemClick(item.key)">{{item.title}}</li>
+        <li class="active">Home</li>
+        <li>Pirate Disco!</li>
+        <li>Pirate Happy Hour!</li>
+        <li>Pirate Birthday Parrrty!</li>
     </ul>
 </nav>

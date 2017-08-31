@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 
 import { iUiState, iAppState } from '../../models';
@@ -10,7 +11,7 @@ import { iUiState, iAppState } from '../../models';
 })
 export class MainView implements OnInit, OnDestroy {
 
-    storeSubscription: any;
+    storeSubscription: Subscription;
     uiState: iUiState;
 
     constructor(private store: Store<iAppState>) {}

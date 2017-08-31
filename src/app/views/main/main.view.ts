@@ -14,9 +14,14 @@ export class MainView implements OnInit, OnDestroy {
     storeSubscription: Subscription;
     uiState: iUiState;
 
+    // this is our one smart component, the view that will house
+    // all of the dumb components.
     constructor(private store: Store<iAppState>) {}
 
     ngOnInit() {
+        // we set up this view's intelligence by having it subscribe
+        // to the Store.  later, when we start handling events, it will
+        // also dispatch actions to the store as well.
         this.storeSubscription = this.store.select('ui')
             .subscribe(val => this.uiState = val);
     }
